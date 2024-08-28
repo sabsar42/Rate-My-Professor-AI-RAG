@@ -1,0 +1,125 @@
+{
+    "reviews": [
+      {
+        "professor": "Dr. John Smith",
+        "subject": "Computer Science",
+        "stars": 5,
+        "reviews": "Great lecturer with deep knowledge. Makes complex topics easy to understand."
+      },
+      {
+        "professor": "Dr. Emily Johnson",
+        "subject": "Mathematics",
+        "stars": 4,
+        "reviews": "Very clear explanations, but sometimes moves too fast through material."
+      },
+      {
+        "professor": "Prof. Michael Brown",
+        "subject": "Physics",
+        "stars": 3,
+        "reviews": "The lectures are informative but can be a bit dry. Overall a good professor."
+      },
+      {
+        "professor": "Dr. Sarah Davis",
+        "subject": "Chemistry",
+        "stars": 4,
+        "reviews": "Engaging and always willing to help. Labs are well organized."
+      },
+      {
+        "professor": "Prof. Robert Wilson",
+        "subject": "History",
+        "stars": 5,
+        "reviews": "Passionate about the subject and makes history come alive!"
+      },
+      {
+        "professor": "Dr. Linda Martinez",
+        "subject": "Biology",
+        "stars": 2,
+        "reviews": "Lectures are hard to follow and not very interactive. Needs improvement."
+      },
+      {
+        "professor": "Prof. James Anderson",
+        "subject": "English Literature",
+        "stars": 4,
+        "reviews": "Very knowledgeable and encourages discussion. Sometimes a bit tough on grading."
+      },
+      {
+        "professor": "Dr. Barbara Thomas",
+        "subject": "Sociology",
+        "stars": 3,
+        "reviews": "Decent lectures, but often goes off-topic. Could be more focused."
+      },
+      {
+        "professor": "Prof. Charles Moore",
+        "subject": "Economics",
+        "stars": 5,
+        "reviews": "Excellent at explaining economic concepts with real-world examples."
+      },
+      {
+        "professor": "Dr. Patricia White",
+        "subject": "Political Science",
+        "stars": 4,
+        "reviews": "Engaging and insightful. Encourages critical thinking and debate."
+      },
+      {
+        "professor": "Prof. Christopher Harris",
+        "subject": "Philosophy",
+        "stars": 3,
+        "reviews": "Interesting lectures but assignments are vague. Needs clearer guidelines."
+      },
+      {
+        "professor": "Dr. Susan Clark",
+        "subject": "Psychology",
+        "stars": 5,
+        "reviews": "Very supportive and understanding. Makes learning enjoyable."
+      },
+      {
+        "professor": "Prof. David Lewis",
+        "subject": "Art History",
+        "stars": 4,
+        "reviews": "Passionate about art and very knowledgeable. Lectures are engaging."
+      },
+      {
+        "professor": "Dr. Karen Walker",
+        "subject": "Business Administration",
+        "stars": 3,
+        "reviews": "The content is good, but the delivery can be monotonous at times."
+      },
+      {
+        "professor": "Prof. Richard King",
+        "subject": "Environmental Science",
+        "stars": 5,
+        "reviews": "Incredibly passionate and knowledgeable. Inspires students to care about the environment."
+      },
+      {
+        "professor": "Dr. Nancy Wright",
+        "subject": "Anthropology",
+        "stars": 4,
+        "reviews": "Great at explaining complex theories. Encourages class participation."
+      },
+      {
+        "professor": "Prof. Kevin Scott",
+        "subject": "Music Theory",
+        "stars": 3,
+        "reviews": "Good professor, but sometimes hard to follow during lectures."
+      },
+      {
+        "professor": "Dr. Laura Young",
+        "subject": "Linguistics",
+        "stars": 5,
+        "reviews": "Amazing at making difficult concepts easy to understand. Very patient."
+      },
+      {
+        "professor": "Prof. Brian Green",
+        "subject": "Geography",
+        "stars": 4,
+        "reviews": "Very knowledgeable and uses great examples. Can be a bit strict with deadlines."
+      },
+      {
+        "professor": "Dr. Deborah Adams",
+        "subject": "Engineering",
+        "stars": 5,
+        "reviews": "Incredible professor with a deep understanding of the subject. Highly recommended!"
+      }
+    ]
+  }
+  

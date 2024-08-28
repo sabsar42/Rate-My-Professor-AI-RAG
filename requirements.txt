@@ -1,0 +1,6 @@
+python-dotenv
+google-generativeai
+langchain-community
+sentence-transformers
+pinecone-client[grpc]
+pinecone-client
