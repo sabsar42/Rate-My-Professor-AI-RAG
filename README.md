@@ -1,8 +1,8 @@
-# Rate My Professor AI
+# Rate My Professor AI (RAG)
 
 ## Overview
 
-Rate My Professor AI is an innovative chat interface that helps students find information about professors using artificial intelligence. This project combines a sleek, modern UI with powerful AI capabilities to provide students with quick, insightful information about their potential instructors.
+Rate My Professor AI (RAG) is an innovative chat interface that helps students find information about professors using artificial intelligence. This project combines a sleek, modern UI with powerful AI capabilities to provide students with quick, insightful information about their potential instructors.
 
 ## Features
 
@@ -16,7 +16,9 @@ Rate My Professor AI is an innovative chat interface that helps students find in
 - React
 - Next.js
 - Material-UI (MUI)
-- [Your AI Backend Technology]
+- Pinecode
+- Google's Gemini
+- Langchain
 
 ## Prerequisites
 
@@ -30,13 +32,13 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/rate-my-professor-ai.git
+   git clone https://github.com/sabsar42/Rate-My-Professor-AI-RAG.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd rate-my-professor-ai
+   cd Rate-My-Professor-AI-RAG
    ```
 
 3. Install the dependencies:
@@ -73,9 +75,9 @@ Before you begin, ensure you have the following installed:
 We welcome contributions to the Rate My Professor AI project. Please follow these steps to contribute:
 
 1. Fork the repository.
-2. Create a new branch for your feature (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
+2. Create a new branch for your feature (`git checkout -b feature/Feature`).
+3. Commit your changes (`git commit -m 'Add some Feature'`).
+4. Push to the branch (`git push origin feature/Feature`).
 5. Open a Pull Request.
 
 ## License
@@ -84,11 +86,10 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- Thanks to [Your AI Provider] for powering the AI responses.
-- Shoutout to the Material-UI team for their excellent component library.
+- Headstarter AI
 
 ## Contact
 
-Your Name - your.email@example.com
+Name: Shakib Absar
 
-Project Link: [https://github.com/your-username/rate-my-professor-ai](https://github.com/your-username/rate-my-professor-ai)
+Project Link: [https://github.com/sabsar42/Rate-My-Professor-AI-RAG](https://github.com/sabsar42/Rate-My-Professor-AI-RAG)
