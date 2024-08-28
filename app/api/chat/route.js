@@ -43,45 +43,48 @@ For each query, provide the following information:
 Remember, your goal is to help students make informed decisions about their education by connecting them with professors who best meet their academic needs and learning preferences.
 `
 
-
 export async function POST(req){
     const data = await req.json();
-    const pc = new Pinecone(
-        {
-            apiKey: process.env.PINECONE_API_KEY,
-        }
-    )
-
-    const index = pc.index('rag').namespace('ns1')
-    const text = data[data.length - 1].parts[0].text;
-
+    const pc = new Pinecone({
+        apiKey: process.env.PINECONE_API_KEY,
+    })
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({ model: "text-embedding-004"});
 
+    const index = pc.index('rag-prof').namespace('ns1');
+
+    const text = data[data.length - 1].parts[0].text;
+
     const result = await model.embedContent(text);
 
+   
     const results = await index.query({
         topK: 3,
         includeMetadata: true,
         vector: result.embedding.values
     })
 
-    let resultString = 'Returned resylts successfully from vectorDB(done automatically): '
+   
+
+    let resultString = 'Returned results from vector db (done automatically):';
 
     results.matches.forEach((match)=>{
-        resultString+=
-            `
-            Professor: ${match.id}
-            Review: ${match.metadata.reviews}
-            Subject: ${match.metadata.subject}
-            Stars: ${match.metadata.stars}
-            \n\n
-            `
+        resultString += `
+
+        Professor: ${match.id}
+        Review: ${match.metadata.stars}
+        Subject: ${match.metadata.subject}
+        Stars: ${match.metadata.stars}
+        \n\n
+        `
     })
 
+    
     const lastMessage = data[data.length - 1]
     const lastMessageContent = lastMessage.parts[0].text + resultString
     const lastDataWithoutLastMessage = data.slice(0, data.length - 1)
+
+
 
     const genModel = genAI.getGenerativeModel({
         model: "gemini-1.0-pro",
@@ -98,40 +101,39 @@ export async function POST(req){
                 parts: [{text: "Understood."}],
               },
             ...lastDataWithoutLastMessage,
-            
+           
         ],
     });
 
     const response = await completion.sendMessage(lastMessageContent);
 
-    const stream = ReadableStream(
-        {
-            async start(controller){
-                const encoder = new TextEncoder();
-                try{
-                    const result = await genModel.generateContentStream(response.response.text());
+    
+    const stream = new ReadableStream({
+        async start(controller){
+            const encoder = new TextEncoder();
+            try{
+                const result = await genModel.generateContentStream(response.response.text());
 
-                    for await(const chunk of result.stream){
-                        const content = chunk.candidates[0].content.parts[0].text;
+                for await (const chunk of result.stream){
+                   
+                    const content = chunk.candidates[0].content.parts[0].text;
 
-                        if(content){
-                            const text = encoder.encode(content);
-                            controller.enqueue(text);
-
-
-                        }
+                    if(content){
+                        const text = encoder.encode(content);
+                        controller.enqueue(text);
                     }
                 }
-                catch(err){
-                    controller.error(err)
-                }
-                finally{
-                    controller.close();
-                }
+            }
+            catch(err){
+                controller.error(err)
+            }
+            finally{
+                controller.close();
             }
         }
+    })
 
-    )
+    
+
     return new NextResponse(stream);
-
 }

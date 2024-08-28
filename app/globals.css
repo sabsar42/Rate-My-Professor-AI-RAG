@@ -1,0 +1,133 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f4f8;
+    padding: 16px;
+  }
+  
+  .paper {
+    width: 600px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .header {
+    padding: 24px;
+    text-align: center;
+    border-bottom: 3px solid #00796b;
+    background-color: #00796b;
+  }
+  
+  .header h1 {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .header p {
+    color: #b2dfdb;
+  }
+  
+  .messageArea {
+    flex-grow: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .messageContainer {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 100%;
+  }
+  
+  .message {
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px;
+  }
+  
+  .message.model {
+    background-color: #00796b;
+    color: white;
+  }
+  
+  .message.user {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .messageBox {
+    background-color: #004d40;
+    color: white;
+    border-radius: 8px;
+    padding: 12px;
+    max-width: 80%;
+    word-break: break-word;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .divider {
+    border-color: #e0e0e0;
+  }
+  
+  .inputArea {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+  }
+  
+  .textField {
+    margin-right: 16px;
+    color: black;
+  }
+  
+  .textField input {
+    color: black;
+  }
+  
+  .textField .MuiOutlinedInput-root fieldset {
+    border-color: #00796b;
+  }
+  
+  .textField .MuiOutlinedInput-root:hover fieldset {
+    border-color: #004d40;
+  }
+  
+  .textField .MuiOutlinedInput-root.Mui-focused fieldset {
+    border-color: #004d40;
+  }
+  
+  .textField .MuiInputLabel-root {
+    color: #004d40;
+  }
+  
+  .sendButton {
+    background-color: #004d40;
+    height: 56px;
+  }
+  
+  .sendButton:hover {
+    background-color: #002f2f;
+  }
+  
