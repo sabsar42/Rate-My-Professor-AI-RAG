@@ -13,16 +13,17 @@ export default function Home() {
   
   const [message, setMessage] = useState('');
 
+  
   const sendMessage = async () => {
     const updatedMessages = [
       ...messages,
       { role: "user", parts: [{ text: message }] },
       { role: "model", parts: [{ text: '' }] }
     ];
-
+  
     setMessages(updatedMessages);
     setMessage('');
-
+  
     const response = fetch('api/chat', {
       method: 'POST',
       headers: {
@@ -32,29 +33,36 @@ export default function Home() {
     }).then(async (res) => {
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
-
+  
       let result = '';
       return reader.read().then(function processText({ done, value }) {
         if (done) {
-          return result;
+          // Attempt to format the response correctly
+          const formattedResult = result
+            .replace(/\|/g, '\n')  // Replace '|' with newlines
+            .replace(/\n\s*\n/g, '\n')  // Remove extra empty lines
+            .replace(/(\r\n|\n|\r)/gm, '\n')  // Normalize newlines
+            .trim(); // Trim leading/trailing whitespace
+  
+          setMessages((messages) => {
+            const otherMessages = messages.slice(0, messages.length - 1);
+  
+            return [
+              ...otherMessages,
+              { role: "model", parts: [{ text: formattedResult }] },
+            ];
+          });
+  
+          return formattedResult;
         }
-
+  
         const text = decoder.decode(value || new Uint8Array(), { stream: true });
-        
-        setMessages((messages) => {
-          let lastMessage = messages[messages.length - 1];
-          let otherMessages = messages.slice(0, messages.length - 1);
-
-          return [
-            ...otherMessages,
-            { ...lastMessage, parts: [{ text: lastMessage.parts[0].text + text }] },
-          ];
-        });
-
+        result += text;
         return reader.read().then(processText);
       });
     });
-  }
+  };
+  
   
   return (
     <Box

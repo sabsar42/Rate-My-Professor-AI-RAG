@@ -99,7 +99,6 @@ export async function POST(req){
 
     results.matches.forEach((match)=>{
         resultString += `
-
         Professor: ${match.id}
         Review: ${match.metadata.stars}
         Subject: ${match.metadata.subject}
